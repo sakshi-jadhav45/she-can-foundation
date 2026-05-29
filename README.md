@@ -1,4 +1,4 @@
-<img width="1875" height="893" alt="Screenshot 2026-05-29 101120" src="https://github.com/user-attachments/assets/ae21c169-57cc-4db2-a524-e266b9ffe60f" />
+
 # She Can Foundation
 
 A secure NGO volunteer onboarding platform built using Spring Boot, Spring Security, JWT Authentication, MySQL, HTML, CSS, and JavaScript.
@@ -169,34 +169,32 @@ Authorization: Bearer JWT_TOKEN
 
 ```md
 ![Home Page](screenshots/home-page.png)
-<img width="713" height="390" alt="Screenshot 2026-05-29 092352" src="https://github.com/user-attachments/assets/b7433ed1-8d34-4a95-a798-e3c2b3a31cda" />
-
 ```
+<img width="713" height="390" alt="Screenshot 2026-05-29 092352" src="https://github.com/user-attachments/assets/b7433ed1-8d34-4a95-a798-e3c2b3a31cda" />
 
 
 ## Join Form
 
 ```md
 ![Join Form](screenshots/join-form.png)
-<img width="1881" height="910" alt="Screenshot 2026-05-29 094257" src="https://github.com/user-attachments/assets/5653274d-ee9e-492d-acc6-67de7610b32b" />
 
 ```
+<img width="1881" height="910" alt="Screenshot 2026-05-29 094257" src="https://github.com/user-attachments/assets/5653274d-ee9e-492d-acc6-67de7610b32b" />
 
 ## Admin Login
 
 ```md
 ![Admin Login](screenshots/admin-login.png)
-<img width="1736" height="885" alt="Screenshot 2026-05-29 094346" src="https://github.com/user-attachments/assets/a0209d4a-e3e5-41d0-ae81-df4be02f17a7" />
-
 ```
+<img width="1736" height="885" alt="Screenshot 2026-05-29 094346" src="https://github.com/user-attachments/assets/a0209d4a-e3e5-41d0-ae81-df4be02f17a7" />
 
 ## Admin Dashboard
 
 ```md
 ![Admin Dashboard](screenshots/admin-dashboard.png)
-<img width="713" height="390" alt="Screenshot 2026-05-29 092352" src="https://github.com/user-attachments/assets/ced54152-2c46-4223-b7c7-db567ae1c31d" />
 
 ```
+<img width="713" height="390" alt="Screenshot 2026-05-29 092352" src="https://github.com/user-attachments/assets/ced54152-2c46-4223-b7c7-db567ae1c31d" />
 
 ---
 
