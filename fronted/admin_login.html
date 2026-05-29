@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - She Can Foundation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <h2>Admin Login</h2>
+
+    <form id="loginForm">
+
+        <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                required
+        >
+
+        <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                required
+        >
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+
+document.getElementById("loginForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const loginData = {
+
+        email: document.getElementById("email").value,
+
+        password: document.getElementById("password").value
+    };
+
+    try{
+
+        const response = await fetch(
+            "http://localhost:8080/api/auth/login",
+            {
+                method: "POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body: JSON.stringify(loginData)
+            }
+        );
+
+        if(response.ok){
+
+            const token = await response.text();
+
+            localStorage.setItem("token", token);
+
+            alert("Login Successful");
+
+            window.location.href =
+                "admin_dashboard.html";
+
+        }else{
+
+            alert("Invalid Credentials");
+        }
+
+    }catch(error){
+
+        console.log(error);
+
+        alert("Login Failed");
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+

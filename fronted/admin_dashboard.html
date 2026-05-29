@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        .header{
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            margin-bottom:30px;
+        }
+
+        h1{
+            color:#ff4f81;
+        }
+
+        .logout-btn{
+
+            background:red;
+            color:white;
+
+            border:none;
+            padding:10px 20px;
+
+            cursor:pointer;
+            border-radius:5px;
+        }
+
+        table{
+
+            width:100%;
+            border-collapse:collapse;
+
+            background:white;
+        }
+
+        th,td{
+
+            border:1px solid #ddd;
+
+            padding:12px;
+
+            text-align:left;
+        }
+
+        th{
+
+            background:#ff4f81;
+            color:white;
+        }
+
+        tr:nth-child(even){
+
+            background:#f9f9f9;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="header">
+
+    <h1>She Can Foundation Admin Dashboard</h1>
+
+    <button
+        class="logout-btn"
+        onclick="logout()">
+
+        Logout
+
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+
+    <tr>
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Reason</th>
+        <th>Other Reason</th>
+        <th>Message</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody id="tableBody">
+
+    </tbody>
+
+</table>
+
+<script>
+
+    const token =
+        localStorage.getItem("token");
+
+    if(!token){
+
+        window.location.href =
+            "admin-login.html";
+    }
+
+    async function loadForms(){
+
+        try{
+
+            const response =
+                await fetch(
+                    "http://localhost:8080/api/admin/forms",
+                    {
+                        method:"GET",
+
+                        headers:{
+                            "Authorization":
+                                `Bearer ${token}`
+                        }
+                    }
+                );
+
+            if(!response.ok){
+
+                alert("Unauthorized");
+
+                localStorage.removeItem("token");
+
+                window.location.href =
+                    "admin-login.html";
+
+                return;
+            }
+
+            const forms =
+                await response.json();
+
+            const tableBody =
+                document.getElementById("tableBody");
+
+            tableBody.innerHTML = "";
+
+            forms.forEach(form => {
+
+                tableBody.innerHTML += `
+                <tr>
+                    <td>${form.id}</td>
+                    <td>${form.name}</td>
+                    <td>${form.email}</td>
+                    <td>${form.phone}</td>
+                    <td>${form.reason}</td>
+                    <td>${form.otherReason}</td>
+                    <td>${form.message}</td>
+                </tr>
+                `;
+
+            });
+
+        }
+        catch(error){
+
+            console.error(error);
+
+            alert("Error loading data");
+        }
+    }
+
+    function logout(){
+
+        localStorage.removeItem("token");
+
+        window.location.href =
+            "admin-login.html";
+    }
+
+    loadForms();
+
+</script>
+
+</body>
+</html>
+
