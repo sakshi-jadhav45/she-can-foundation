@@ -170,7 +170,8 @@ Authorization: Bearer JWT_TOKEN
 ```md
 ![Home Page](screenshots/home-page.png)
 ```
-<img width="713" height="390" alt="Screenshot 2026-05-29 092352" src="https://github.com/user-attachments/assets/b7433ed1-8d34-4a95-a798-e3c2b3a31cda" />
+<img width="1875" height="893" alt="Screenshot 2026-05-29 101120" src="https://github.com/user-attachments/assets/78ec5119-4f4e-4879-9eae-cfa144cf99c3" />
+
 
 
 ## Join Form
@@ -194,7 +195,7 @@ Authorization: Bearer JWT_TOKEN
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ```
-<img width="713" height="390" alt="Screenshot 2026-05-29 092352" src="https://github.com/user-attachments/assets/ced54152-2c46-4223-b7c7-db567ae1c31d" />
+<img width="1909" height="860" alt="Screenshot 2026-05-29 094310" src="https://github.com/user-attachments/assets/ad614316-a4ef-4fad-83fc-ff2a12ddbf5a" />
 
 ---
 
